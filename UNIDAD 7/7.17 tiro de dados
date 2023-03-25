@@ -1,0 +1,57 @@
+package ejercicio717;
+import java.util.Random;
+
+public class TiroDados {
+    public static void main(String[] args) {
+        Random random = new Random();
+        int[] frecuencia = new int[11]; 
+        
+        for (int i = 0; i < 36000000; i++) { // tirar los dados 36,000,000 veces
+            int dado1 = random.nextInt(6) + 1; // tirar el primer dado
+            int dado2 = random.nextInt(6) + 1; // tirar el segundo dado
+            int suma = dado1 + dado2; // calcular la suma
+            
+            switch (suma) { // frecuencia de la suma
+                case 2:
+                    frecuencia[0]++;
+                    break;
+                case 3:
+                    frecuencia[1]++;
+                    break;
+                case 4:
+                    frecuencia[2]++;
+                    break;
+                case 5:
+                    frecuencia[3]++;
+                    break;
+                case 6:
+                    frecuencia[4]++;
+                    break;
+                case 7:
+                    frecuencia[5]++;
+                    break;
+                case 8:
+                    frecuencia[6]++;
+                    break;
+                case 9:
+                    frecuencia[7]++;
+                    break;
+                case 10:
+                    frecuencia[8]++;
+                    break;
+                case 11:
+                    frecuencia[9]++;
+                    break;
+                case 12:
+                    frecuencia[10]++;
+                    break;
+            }
+        }
+        
+        //formato tabular
+        System.out.printf("%s\t%s%n", "Suma", "Frecuencia");
+        for (int i = 2; i <= 12; i++) {
+            System.out.printf("%d\t%d%n", i, frecuencia[i - 2]);
+        }
+    }
+}
